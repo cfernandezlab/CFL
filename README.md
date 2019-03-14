@@ -6,7 +6,7 @@ This repository contains original implementation of the [paper]() 'Corners for L
 
 The page of the paper is https://cfernandezlab.github.io/CFL/ 
 
-<img src='img/' width=400>
+<img src='img/layouts.png' width=800>
 
 ## Citing
 Please cite CFL in your publications if it helps your research:
