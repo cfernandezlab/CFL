@@ -56,12 +56,11 @@ Edit the config file so that the path to the dataset folder and the network para
 
 To run our demo please run:
 ```bash
-(venvname)$ python test_CFL.py # Runs the test examples with Standard Convolutions
+(venvname)$ python test_CFL.py --dataset Datasets/SUN360/ --weights Weights/StdConvs/model.ckpt --network StdConvs --results results_std # Runs the test examples with Standard Convolutions and save results in 'results_std'
 ```
 ```bash
-(venvname)$ python test_CFL.py --network EquiConvs # Runs the test examples with Equirectangular Convolutions
+(venvname)$ python test_CFL.py --dataset Datasets/SUN360/ --weights Weights/EquiConvs/model.ckpt --network EquiConvs --results results_equi --network EquiConvs # Runs the test examples with Equirectangular Convolutions and save results in 'results_equi'
 ```
-
 ## Contact
 You can find our contact information in our personal websites [Clara](https://cfernandezlab.github.io) and [Jose M.](http://webdiis.unizar.es/~jmfacil/)
 
