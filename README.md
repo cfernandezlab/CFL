@@ -10,7 +10,7 @@ The page of the paper is https://cfernandezlab.github.io/CFL/
 
 ## Citing
 Please cite CFL in your publications if it helps your research:
-```
+```bibtex
 @article{fernandez2019CFL,
   title={Corners for Layout: End-to-End Layout Recovery from 360 Images},
   author={Fernandez-Labrador, Clara and Fácil, José M and Perez-Yus, Alejandro and Demonceaux, Cédric and Civera, Javier and Guerrero, José J},
@@ -19,4 +19,56 @@ Please cite CFL in your publications if it helps your research:
 }
 ```
 
-## Requirements
+## Use Instructions
+We recommend the use of a virtual enviroment for the use of this project. ([pew](https://github.com/berdario/pew))
+```bash
+$ pew new venvname -p python3 # replace venvname with your prefered name (it also works with python 2.7)
+```
+### Install Requirements
+#### 1. This code has been compiled and tested using:
+  - python3
+  - g++-4.9
+  - cuda-10.0
+  - cuDNN 7.5
+  - TensorFlow 1.13
+#### 2. Install  python requirements:
+  ```bash
+  (venvname)$ pip install -r requirement.txt
+  ```
+#### 3. Compile Deformable Convolutions:
+  Make sure to modify [Models/make.sh](Models/make.sh) with your computer settings (i.e. CUDA_HOME, CUDA Architecture).
+  ```bash
+  (venvname)$ cd Models
+  (venvname)$ bash make.sh
+  ```
+
+### Download Dataset
+SUN360: [download](http://webdiis.unizar.es/~jmfacil/cfl/sun360)
+
+### Download Models
+StdConvs version: [download](http://webdiis.unizar.es/~jmfacil/cfl/stdconvs)
+
+EquiConvs version: [download](http://webdiis.unizar.es/~jmfacil/cfl/equiconvs)
+### Run Test
+Edit the config file so that the path to the dataset folder and the network parameters is correct.
+
+To run our demo please run:
+```bash
+(venvname)$ python test_CFL.py # Runs the test examples with Standard Convolutions
+```
+```bash
+(venvname)$ python test_CFL.py --network EquiConvs # Runs the test examples with Equirectangular Convolutions
+```
+
+## Contact
+You can find our contact information in our personal websites [Clara](https://cfernandezlab.github.io) and [Jose M.](http://webdiis.unizar.es/~jmfacil/)
+
+## License 
+This software is under GNU General Public License Version 3 (GPLv3), please see [GNU License](http://www.gnu.org/licenses/gpl.html)
+
+For commercial purposes, please contact the authors.
+
+
+## Disclaimer
+
+This site and the code provided here are under active development. Even though we try to only release working high quality code, this version might still contain some issues. Please use it with caution.
