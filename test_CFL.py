@@ -89,7 +89,7 @@ def predict(image_path_list):
 
             name=str(image_path)    
             filename = os.path.basename(name)
-            if os.path.isfile(RESULTS_DIR +'EM_test/' + filename + "_emap.jpg"):
+            if os.path.isfile(args.results +'EM_test/' + filename + "_emap.jpg"):
                 continue 
 
             img = Image.open(image_path)
@@ -105,8 +105,8 @@ def predict(image_path_list):
             emap, cmap = sess.run([tf.nn.sigmoid(pred_edges),tf.nn.sigmoid(pred_corners)], feed_dict=fd)
             
             # Save results   
-            scipy.misc.imsave(RESULTS_DIR +'EM_test/' + filename + "_emap.jpg", emap[0,:,:,0])
-            scipy.misc.imsave(RESULTS_DIR +'CM_test/' + filename + "_cmap.jpg", cmap[0,:,:,0])
+            scipy.misc.imsave(args.results +'EM_test/' + filename + "_emap.jpg", emap[0,:,:,0])
+            scipy.misc.imsave(args.results +'CM_test/' + filename + "_cmap.jpg", cmap[0,:,:,0])
       
                 
 def main():
@@ -114,9 +114,9 @@ def main():
     t = time.time()
 
     print('Predict TESTING set')
-    if not os.path.exists(RESULTS_DIR + 'EM_test/'): os.makedirs(RESULTS_DIR + 'EM_test/')
-    if not os.path.exists(RESULTS_DIR + 'CM_test/'): os.makedirs(RESULTS_DIR + 'CM_test/')
-    pred = predict(glob.glob(DATASETS_DIR + args.dataset + '/RGB/*.jpg'))
+    if not os.path.exists(args.results + 'EM_test/'): os.makedirs(args.results + 'EM_test/')
+    if not os.path.exists(args.results + 'CM_test/'): os.makedirs(args.results + 'CM_test/')
+    pred = predict(glob.glob(args.dataset + '/RGB/*.jpg'))
 
     elapsed = time.time() - t
     print('Total time in seconds:',elapsed/1)
