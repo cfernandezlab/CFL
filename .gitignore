@@ -1,3 +1,5 @@
+*.so
+*.o
 *.pyc
 *.jpg
 *.jpeg
