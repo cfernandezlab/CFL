@@ -36,7 +36,9 @@ $ pew new venvname -p python3 # replace venvname with your prefered name (it als
   (venvname)$ pip install -r requirement.txt
   ```
 #### 3. Compile Deformable Convolutions:
-  Make sure to modify [Models/make.sh](Models/make.sh) with your computer settings (i.e. CUDA_HOME, CUDA Architecture).
+  We use [this](https://github.com/Zardinality/TF_Deformable_Net) Deformable Convolutions implementation.
+  
+  First, make sure to modify [Models/make.sh](Models/make.sh) with your computer settings (i.e. CUDA_HOME, CUDA Architecture). Second run the following commands.
   ```bash
   (venvname)$ cd Models
   (venvname)$ bash make.sh
