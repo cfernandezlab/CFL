@@ -24,11 +24,11 @@ def preprocess(img):
 def evaluate(map):
     
     if map == 'edges':
-        prediction_path_list = glob.glob(RESULTS_DIR +'EM_test/*.jpg')
-        gt_path_list = glob.glob(DATASETS_DIR + args.dataset + '/EM_testing/*.jpg')
+        prediction_path_list = glob.glob(args.results +'EM_test/*.jpg')
+        gt_path_list = glob.glob(args.dataset + '/EM_gt/*.jpg')
     if map == 'corners':
-        prediction_path_list = glob.glob(RESULTS_DIR +'CM_test/*.jpg')
-        gt_path_list = glob.glob(DATASETS_DIR + args.dataset + '/CM_testing/*.jpg')
+        prediction_path_list = glob.glob(args.results +'CM_test/*.jpg')
+        gt_path_list = glob.glob(args.dataset + '/CM_gt/*.jpg')
     prediction_path_list.sort()
     gt_path_list.sort()    
 
@@ -80,10 +80,7 @@ def predict(image_path_list):
 
         print('Loading the model')
 
-        if args.network == 'StdConvs':
-            saver.restore(sess, WEIGHTS_DIR + "StdConvs/201811071307.ckpt")
-        if args.network == 'EquiConvs':  
-            saver.restore(sess, WEIGHTS_DIR + "EquiConvs/201811071943.ckpt")
+        saver.restore(sess, args.weights)
 
         print('model loaded')
 
@@ -119,7 +116,7 @@ def main():
     print('Predict TESTING set')
     if not os.path.exists(RESULTS_DIR + 'EM_test/'): os.makedirs(RESULTS_DIR + 'EM_test/')
     if not os.path.exists(RESULTS_DIR + 'CM_test/'): os.makedirs(RESULTS_DIR + 'CM_test/')
-    pred = predict(glob.glob(DATASETS_DIR + args.dataset + '/RGB_testing/*.jpg'))
+    pred = predict(glob.glob(DATASETS_DIR + args.dataset + '/RGB/*.jpg'))
 
     elapsed = time.time() - t
     print('Total time in seconds:',elapsed/1)
