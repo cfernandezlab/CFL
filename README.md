@@ -11,7 +11,12 @@ The page of the paper is https://cfernandezlab.github.io/CFL/
 ## Citing
 Please cite CFL in your publications if it helps your research:
 ```
-
+@article{fernandez2019CFL,
+  title={Corners for Layout: End-to-End Layout Recovery from 360 Images},
+  author={Fernandez-Labrador, Clara and Fácil, José M and Perez-Yus, Alejandro and Demonceaux, Cédric and Civera, Javier and Guerrero, José J},
+  journal={arXiv:1903.08094},
+  year={2019}
+}
 ```
 
 ## Requirements
