@@ -1,4 +1,3 @@
 
 from. CFL_StdConvs import LayoutEstimator_StdConvs
 from. CFL_EquiConvs import LayoutEstimator_EquiConvs
-from. CFL_EquiConvs_reduced import LayoutEstimator_EquiConvs_reduced

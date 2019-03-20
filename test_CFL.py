@@ -24,11 +24,11 @@ def preprocess(img):
 def evaluate(map):
     
     if map == 'edges':
-        prediction_path_list = glob.glob(args.results +'EM_test/*.jpg')
-        gt_path_list = glob.glob(args.dataset + '/EM_gt/*.jpg')
+        prediction_path_list = glob.glob(os.path.join(args.results,'EM_test')+'/*.jpg')
+        gt_path_list = glob.glob(os.path.join(args.dataset, 'EM_gt')+'/*.jpg')
     if map == 'corners':
-        prediction_path_list = glob.glob(args.results +'CM_test/*.jpg')
-        gt_path_list = glob.glob(args.dataset + '/CM_gt/*.jpg')
+        prediction_path_list = glob.glob(os.path.join(args.results,'CM_test')+'/*.jpg')
+        gt_path_list = glob.glob(os.path.join(args.dataset, 'CM_gt')+'/*.jpg')
     prediction_path_list.sort()
     gt_path_list.sort()    
 
@@ -73,7 +73,7 @@ def predict(image_path_list):
     if args.network == 'StdConvs':
         net = Models.LayoutEstimator_StdConvs({'rgb_input':rgb_ph}, is_training = False)
     elif args.network == 'EquiConvs':  
-        net = Models.LayoutEstimator_EquiConvs_reduced({'rgb_input':rgb_ph}, is_training = False)
+        net = Models.LayoutEstimator_EquiConvs({'rgb_input':rgb_ph}, is_training = False)
    
     saver = tf.train.Saver() 
     with tf.Session() as sess:
@@ -89,8 +89,10 @@ def predict(image_path_list):
 
             name=str(image_path)    
             filename = os.path.basename(name)
-            if os.path.isfile(args.results +'EM_test/' + filename + "_emap.jpg"):
-                continue 
+            
+            # Do not overwrite results if they exists
+            #if os.path.isfile(os.path.join(args.results,'EM_test',filename + "_emap.jpg")):
+            #    continue 
 
             img = Image.open(image_path)
             img = img.resize([args.im_width,args.im_height], Image.ANTIALIAS)
@@ -105,8 +107,8 @@ def predict(image_path_list):
             emap, cmap = sess.run([tf.nn.sigmoid(pred_edges),tf.nn.sigmoid(pred_corners)], feed_dict=fd)
             
             # Save results   
-            scipy.misc.imsave(args.results +'EM_test/' + filename + "_emap.jpg", emap[0,:,:,0])
-            scipy.misc.imsave(args.results +'CM_test/' + filename + "_cmap.jpg", cmap[0,:,:,0])
+            scipy.misc.imsave(os.path.join(args.results,'EM_test',filename + "_emap.jpg"), emap[0,:,:,0])
+            scipy.misc.imsave(os.path.join(args.results,'CM_test',filename + "_emap.jpg"), cmap[0,:,:,0])
       
                 
 def main():
@@ -114,9 +116,9 @@ def main():
     t = time.time()
 
     print('Predict TESTING set')
-    if not os.path.exists(args.results + 'EM_test/'): os.makedirs(args.results + 'EM_test/')
-    if not os.path.exists(args.results + 'CM_test/'): os.makedirs(args.results + 'CM_test/')
-    pred = predict(glob.glob(args.dataset + '/RGB/*.jpg'))
+    if not os.path.exists(os.path.join(args.results,'EM_test')): os.makedirs(os.path.join(args.results,'EM_test'))
+    if not os.path.exists(os.path.join(args.results,'CM_test')): os.makedirs(os.path.join(args.results,'CM_test'))
+    pred = predict(glob.glob(os.path.join(args.dataset,'RGB')+'/*.jpg'))
 
     elapsed = time.time() - t
     print('Total time in seconds:',elapsed/1)
