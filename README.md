@@ -6,7 +6,9 @@ This repository contains original implementation of the [paper](https://arxiv.or
 
 The page of the paper is https://cfernandezlab.github.io/CFL/ 
 
+<p align="center">
 <img src='img/layouts.png' width=900>
+  </p>
 
 ## Citing
 Please cite CFL in your publications if it helps your research:
@@ -38,6 +40,11 @@ $ pew new venvname -p python3 # replace venvname with your prefered name (it als
   (venvname)$ pip install -r requirements.txt
   ```
 #### 3. Compile Deformable Convolutions:
+
+<p align="center">
+<img rc='img/equic.png' width=700>
+</p>
+
   We use [this](https://github.com/Zardinality/TF_Deformable_Net) Deformable Convolutions implementation.
   
   First, make sure to modify [Models/make.sh](Models/make.sh) with your computer settings (*i.e.* CUDA_HOME, CUDA Architecture). Second run the following commands.
