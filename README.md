@@ -42,8 +42,8 @@ $ pew new venvname -p python3 # replace venvname with your prefered name (it als
 #### 3. Compile Deformable Convolutions:
 
 <p align="center">
-<img rc='img/equic.png' width=700>
-</p>
+<img src='img/equic.png' width=450>
+  </p>
 
   We use [this](https://github.com/Zardinality/TF_Deformable_Net) Deformable Convolutions implementation.
   
