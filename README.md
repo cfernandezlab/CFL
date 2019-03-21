@@ -31,6 +31,7 @@ $ pew new venvname -p python3 # replace venvname with your prefered name (it als
   - cuda-10.0
   - cuDNN 7.5
   - TensorFlow 1.13
+ 
  You are free to try different configurations. But we do not ensure it had been tested.
 #### 2. Install  python requirements:
   ```bash
