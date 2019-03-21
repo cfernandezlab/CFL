@@ -35,7 +35,7 @@ $ pew new venvname -p python3 # replace venvname with your prefered name (it als
  You are free to try different configurations. But we do not ensure it had been tested.
 #### 2. Install  python requirements:
   ```bash
-  (venvname)$ pip install -r requirement.txt
+  (venvname)$ pip install -r requirements.txt
   ```
 #### 3. Compile Deformable Convolutions:
   We use [this](https://github.com/Zardinality/TF_Deformable_Net) Deformable Convolutions implementation.
