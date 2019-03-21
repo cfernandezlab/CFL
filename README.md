@@ -20,7 +20,7 @@ Please cite CFL in your publications if it helps your research:
 ```
 
 ## Use Instructions
-We recommend the use of a virtual enviroment for the use of this project. ([pew](https://github.com/berdario/pew))
+We recommend the use of a virtual enviroment for the use of this project. (*e.g.* [pew](https://github.com/berdario/pew))
 ```bash
 $ pew new venvname -p python3 # replace venvname with your prefered name (it also works with python 2.7)
 ```
@@ -40,7 +40,7 @@ $ pew new venvname -p python3 # replace venvname with your prefered name (it als
 #### 3. Compile Deformable Convolutions:
   We use [this](https://github.com/Zardinality/TF_Deformable_Net) Deformable Convolutions implementation.
   
-  First, make sure to modify [Models/make.sh](Models/make.sh) with your computer settings (i.e. CUDA_HOME, CUDA Architecture). Second run the following commands.
+  First, make sure to modify [Models/make.sh](Models/make.sh) with your computer settings (*i.e.* CUDA_HOME, CUDA Architecture). Second run the following commands.
   ```bash
   (venvname)$ cd Models
   (venvname)$ bash make.sh
