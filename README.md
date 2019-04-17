@@ -43,7 +43,7 @@ $ pew new venvname -p python3 # replace venvname with your prefered name (it als
 
 <img src='img/equiconv.png' width=550>
 
-  We use [this](https://github.com/Zardinality/TF_Deformable_Net) Deformable Convolutions implementation to create EquiConvs.
+  We use [this](https://github.com/Zardinality/TF_Deformable_Net) Deformable Convolutions implementation to create EquiConvs, a novel implementation of the convolution for 360º images that adapts the shape of the kernel accordingly to the equirectangular projection distortions. Valid for any task involving panoramic images!
   
   First, make sure to modify [Models/make.sh](Models/make.sh) with your computer settings (*i.e.* CUDA_HOME, CUDA Architecture). Second run the following commands.
   ```bash
