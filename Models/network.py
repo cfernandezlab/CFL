@@ -3,16 +3,6 @@ import tensorflow as tf
 import re
 import math
 from config import * 
-
-#from .fast_rcnn.config import cfg
-# from .roi_pooling_layer import roi_pooling_op as roi_pool_op
-
-# from .rpn_msr.proposal_layer_tf import proposal_layer as proposal_layer_py
-# from .rpn_msr.anchor_target_layer_tf import anchor_target_layer as anchor_target_layer_py
-# from .rpn_msr.proposal_target_layer_tf import proposal_target_layer as proposal_target_layer_py
-# # FCN pooling
-# from .psroi_pooling_layer import psroi_pooling_op as psroi_pooling_op
-# from .deform_psroi_pooling_layer import deform_psroi_pooling_op as deform_psroi_pooling_op
 from .deform_conv_layer import deform_conv_op as deform_conv_op
 
 
@@ -360,43 +350,7 @@ class Network(object):
                 if relu:
                     return tf.nn.relu(dconv)
                 return dconv
-
-
-    # @layer
-    # def deform_conv(self, input, k_h, k_w, c_o, s_h, s_w, num_deform_group, name, num_groups = 1, rate = 1, biased=True, relu=True, 
-    #                 padding=DEFAULT_PADDING, trainable=True, initializer=None):
-    #     """ contribution by miraclebiu, and biased option"""
-    #     self.validate_padding(padding)
-    #     data = input[0]
-    #     offset = input[1]
-    #     c_i = data.get_shape()[-1]
-    #     trans2NCHW = lambda x:tf.transpose(x, [0, 3 ,1 ,2])
-    #     trans2NHWC = lambda x:tf.transpose(x, [0, 2 ,3, 1])
-    #     # deform conv only supports NCHW
-    #     data = trans2NCHW(data)
-    #     offset = trans2NCHW(offset)
-    #     dconvolve = lambda i, k, o: deform_conv_op.deform_conv_op(
-    #         i, k, o, strides = [1, 1, s_h, s_w], rates=[1, 1, rate, rate], padding=padding, num_groups=num_groups, deformable_group=num_deform_group)
-    #     with tf.variable_scope(name, reuse=False) as scope:
-
-    #         # init_weights = tf.truncated_normal_initializer(0.0, stddev=0.001)
-    #         init_weights = tf.zeros_initializer() if initializer is 'zeros' else tf.contrib.layers.variance_scaling_initializer(
-    #             factor=0.01, mode='FAN_AVG', uniform=False)
-    #         init_biases = tf.constant_initializer(0.0)
-    #         kernel = self.make_var('weights', [c_o, c_i, k_h, k_w], init_weights, trainable,
-    #                                regularizer=self.l2_regularizer(cfg.TRAIN.WEIGHT_DECAY))
-    #         print(data, kernel, offset)
-    #         dconv = trans2NHWC(dconvolve(data, kernel, offset))
-    #         if biased:
-    #             biases = self.make_var('biases', [c_o], init_biases, trainable)
-    #             if relu:
-    #                 bias = tf.nn.bias_add(dconv, biases)
-    #                 return tf.nn.relu(bias)
-    #             return tf.nn.bias_add(dconv, biases)
-    #         else:
-    #             if relu:
-    #                 return tf.nn.relu(dconv)
-    #             return dconv      
+      
 
     @layer
     def upconv(self, input, shape, c_o, ksize=4, stride=2, name='upconv', biased=False, relu=True, padding=DEFAULT_PADDING,
