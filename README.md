@@ -51,6 +51,8 @@ $ pew new venvname -p python3 # replace venvname with your prefered name (it als
   (venvname)$ bash make.sh
   ```
 
+<img src='img/movie.gif' width=400>
+
 ### Download Dataset
 SUN360: [download](http://webdiis.unizar.es/~jmfacil/cfl/sun360)
 
