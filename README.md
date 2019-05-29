@@ -1,8 +1,8 @@
 # CFL: End-to-End Layout Recovery from 360 Images
-Tensorflow implementation of our end-to-end model to recover 3D layouts.
+Tensorflow implementation of our end-to-end model to recover 3D layouts of indoor scenes.
 
 ## Introduction
-This repository contains original implementation of the [paper](https://arxiv.org/abs/1903.08094) 'Corners for Layout: End-to-End Layout Recovery from 360 Images' by Clara Fernandez-Labrador*, José M. Fácil*, Alejandro Perez-Yus, Cédric Demonceaux, Javier Civera and José J. Guerrero.
+This repository contains original implementation of the [paper](https://arxiv.org/abs/1903.08094): 'Corners for Layout: End-to-End Layout Recovery from 360 Images' by Clara Fernandez-Labrador*, José M. Fácil*, Alejandro Perez-Yus, Cédric Demonceaux, Javier Civera and José J. Guerrero.
 
 The page of the paper is https://cfernandezlab.github.io/CFL/ 
 
