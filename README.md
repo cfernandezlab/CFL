@@ -68,7 +68,7 @@ To run our demo please run:
 (venvname)$ python test_CFL.py --dataset Datasets/SUN360/test --weights Weights/StdConvs/model.ckpt --network StdConvs --results results_std # Runs the test examples with Standard Convolutions and save results in 'results_std'
 ```
 ```bash
-(venvname)$ python test_CFL.py --dataset Datasets/SUN360/test --weights Weights/EquiConvs/model.ckpt --network EquiConvs --results results_equi --network EquiConvs # Runs the test examples with Equirectangular Convolutions and save results in 'results_equi'
+(venvname)$ python test_CFL.py --dataset Datasets/SUN360/test --weights Weights/EquiConvs/model.ckpt --network EquiConvs --results results_equi # Runs the test examples with Equirectangular Convolutions and save results in 'results_equi'
 ```
 ## Contact
 You can find our contact information in our personal websites [Clara](https://cfernandezlab.github.io) and [Jose M.](http://webdiis.unizar.es/~jmfacil/)
