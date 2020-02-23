@@ -20,6 +20,8 @@ Please cite CFL in your publications if it helps your research:
   year={2019}
 }
 ```
+## News
+Now implemented for TF2 on the TensorFlow addons package! Check the tutorial in this [link](https://github.com/tensorflow/addons/blob/4e86ddd15339de0001649488571a707a2f1f398b/docs/tutorials/deformable_conv2d_ops.ipynb)! 
 
 ## Use Instructions
 We recommend the use of a virtual enviroment for the use of this project. (*e.g.* [pew](https://github.com/berdario/pew))
