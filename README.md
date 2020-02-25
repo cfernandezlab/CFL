@@ -13,11 +13,12 @@ The page of the paper is https://cfernandezlab.github.io/CFL/
 ## Citing
 Please cite CFL in your publications if it helps your research:
 ```bibtex
-@article{fernandez2019CFL,
-  title={Corners for Layout: End-to-End Layout Recovery from 360 Images},
-  author={Fernandez-Labrador, Clara and Fácil, José M and Perez-Yus, Alejandro and Demonceaux, Cédric and Civera, Javier and Guerrero, José J},
-  journal={arXiv:1903.08094},
-  year={2019}
+@article{fernandez2020corners,
+  title={Corners for layout: End-to-end layout recovery from 360 images},
+  author={Fernandez-Labrador, Clara and Facil, Jose M and Perez-Yus, Alejandro and Demonceaux, C{\'e}dric and Civera, Javier and Guerrero, Josechu},
+  journal={IEEE Robotics and Automation Letters},
+  year={2020},
+  publisher={IEEE}
 }
 ```
 ## News
