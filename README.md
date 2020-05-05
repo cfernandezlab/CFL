@@ -65,6 +65,7 @@ SUN360: [download](http://webdiis.unizar.es/~jmfacil/cfl/sun360)
 StdConvs version: [download](http://webdiis.unizar.es/~jmfacil/cfl/stdconvs)
 
 EquiConvs version: [download](http://webdiis.unizar.es/~jmfacil/cfl/equiconvs)
+
 ### Run Test
 Edit the config file so that the path to the dataset folder and the network parameters is correct.
 
@@ -75,6 +76,9 @@ To run our demo please run:
 ```bash
 (venvname)$ python test_CFL.py --dataset Datasets/SUN360/test --weights Weights/EquiConvs/model.ckpt --network EquiConvs --results results_equi # Runs the test examples with Equirectangular Convolutions and save results in 'results_equi'
 ```
+### From Corner Maps to 3D Layout
+Check this notebook [2Dto3D.ipynb](2Dto3D.ipynb).
+
 ## Contact
 You can find our contact information in our personal websites [Clara](https://cfernandezlab.github.io) and [Jose M.](http://webdiis.unizar.es/~jmfacil/)
 
