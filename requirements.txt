@@ -1,6 +1,6 @@
 absl-py==0.7.1
 astor==0.7.1
-certifi==2019.3.9
+certifi==2022.12.7
 chardet==3.0.4
 cycler==0.10.0
 Cython==0.29.6
